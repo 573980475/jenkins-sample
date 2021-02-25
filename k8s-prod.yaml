@@ -34,5 +34,4 @@ spec:
    type: LoadBalancer
    ports:
    - port: 18888
-     targetPort: 18888
-     nodePort: 31890
+
