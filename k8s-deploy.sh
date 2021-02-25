@@ -37,6 +37,8 @@ kind: Service
 metadata:
   namespace: production
   name: ${project_name}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb-ip
   labels:
     app: ${project_name}
 spec:
@@ -45,7 +47,7 @@ spec:
     targetPort: 18888
     nodePort: 31890
     protocol: TCP
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: ${project_name}
     

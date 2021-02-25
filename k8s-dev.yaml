@@ -26,10 +26,12 @@ kind: Service
 metadata:
    name: demo
    namespace: devlopment
+   annotations:
+   service.beta.kubernetes.io/aws-load-balancer-type: nlb-ip   
 spec:
    selector:
      app: jenkins-demo
-   type: NodePort
+   type: LoadBalancer
    ports:
    - port: 18888
      targetPort: 18888
